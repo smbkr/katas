@@ -10,7 +10,7 @@ class PrimeFactors
 
         $candidate = 2;
 
-        while ($candidate < $number)
+        while ($number > 1)
         {
             while ($number % $candidate === 0)
             {
@@ -20,11 +20,6 @@ class PrimeFactors
             }
 
             $candidate ++;
-        }
-
-        if ($number > 1)
-        {
-            $primes[] = $number;
         }
 
         return $primes;
