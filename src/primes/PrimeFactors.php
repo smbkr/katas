@@ -1,6 +1,6 @@
 <?php
 
-namespace Primes;
+namespace Smbkr\Katas\Primes;
 
 class PrimeFactors
 {
