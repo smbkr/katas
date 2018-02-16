@@ -72,7 +72,29 @@ class NamespaceSortTest extends TestCase
                     'Foo\Bar\Zat',
                     'Aaaaa\Aaaaaaa\Aaaaa\Aaaa\Aaa',
                 ]
-            ]
+            ],
+            [
+                'input' => [
+                    'App\Group',
+                    'App\Theme',
+                    'App\ReleaseNote',
+                    'App\Project',
+                    'Faker\Generator',
+                    'App\Deployment',
+                    'App\Venue',
+                    'App\User',
+                ],
+                'expected' => [
+                    'App\Deployment',
+                    'App\Group',
+                    'App\Project',
+                    'App\ReleaseNote',
+                    'App\Theme',
+                    'App\User',
+                    'App\Venue',
+                    'Faker\Generator',
+                ]
+            ],
         ];
     }
     /**
