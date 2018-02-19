@@ -18,3 +18,6 @@ Make sure you only test for correct inputs. there is no need to test for invalid
     1. Remember to solve things as simply as possible so that you force yourself to write tests you did not think about
     1. Remember to refactor after each passing test
 1. Allow the Add method to handle an unknown amount of numbers
+1. Allow the Add method to handle new lines between numbers (instead of commas).
+    1. the following input is ok:  “1\n2,3”  (will equal 6)
+    1. the following input is NOT ok:  “1,\n” (not need to prove it - just clarifying)

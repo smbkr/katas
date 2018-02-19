@@ -99,4 +99,26 @@ class StringCalculatorTest extends TestCase
             ["0,0,0,0,0", 0]
         ];
     }
+
+    /**
+     * @test
+     * @dataProvider delimiterProvider
+     */
+    public function delimiter_can_be_comma_or_newline(string $digits, int $expected)
+    {
+        $stringCalculator = new StringCalculator;
+
+        $result = $stringCalculator->add($digits);
+
+        $this->assertEquals($expected, $result);
+    }
+
+    public function delimiterProvider(): array
+    {
+        return [
+            ["1\n2,3", 6],
+            ["1,2,3", 6],
+            ["1\n2\n3", 6]
+        ];
+    }
 }
