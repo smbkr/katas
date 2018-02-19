@@ -6,14 +6,8 @@ class StringCalculator
 {
     public function add(string $numbers): int
     {
-        if (empty($numbers)) {
-            return 0;
-        }
-
-        $numbers = explode(",", $numbers);
-
-        return array_reduce($numbers, function ($accumulator, $value) {
-            return $accumulator += $value;
+        return array_reduce(explode(",", $numbers), function ($accumulator, $value) {
+            return $accumulator += (int) $value;
         });
     }
 }

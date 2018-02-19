@@ -76,4 +76,27 @@ class StringCalculatorTest extends TestCase
             ["1,2", 3],
         ];
     }
+
+    /**
+     * @test
+     * @dataProvider arbitraryNumberProvider
+     */
+    public function it_sums_an_arbitrary_number_of_digits(string $digits, int $expected)
+    {
+        $stringCalculator = new StringCalculator;
+
+        $result = $stringCalculator->add($digits);
+
+        $this->assertEquals($expected, $result);
+    }
+
+    public function arbitraryNumberProvider(): array
+    {
+        return [
+            ["0,1,2", 3],
+            ["0,1,2,3", 6],
+            ["1,1,1,1,1,1,1,1,1,1", 10],
+            ["0,0,0,0,0", 0]
+        ];
+    }
 }
